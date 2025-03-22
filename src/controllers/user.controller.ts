@@ -14,7 +14,12 @@ export class UserController {
     this.logger.log('GET /users - Fetching all users');
     return this.userService.getAllUsers();
   }
- 
+
+  @Get('by-department')
+  async getUsersByDepartment(): Promise<DepartmentData> {
+    this.logger.log('GET /users/by-department - Fetching users grouped by department');
+    return this.userService.getUsersByDepartment();
+  }
 
   @Get('departments/:department')
   async getUsersBySpecificDepartment(@Param('department') department: string) {

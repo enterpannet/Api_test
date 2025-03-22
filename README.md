@@ -17,9 +17,11 @@ A NestJS application that fetches user data from the DummyJSON API and transform
 
 - `GET /api/users` - Get all users from the API
 - `GET /api/users/by-department` - Get users transformed and grouped by department
+- `GET /api/users/departments/:department` - Get transformed data for a specific department
 
 ## Sample Response
 
+### GET /api/users/by-department
 ```json
 {
   "Engineering": {
@@ -45,6 +47,23 @@ A NestJS application that fetches user data from the DummyJSON API and transform
     "addressUser": {
       "JaneSmith": "67890"
     }
+  }
+}
+```
+
+### GET /api/users/departments/Engineering
+```json
+{
+  "male": 2,
+  "female": 0,
+  "ageRange": "30-35",
+  "hair": {
+    "Black": 1,
+    "Blond": 1
+  },
+  "addressUser": {
+    "JohnDoe": "12345",
+    "AlexJohnson": "54321"
   }
 }
 ```
